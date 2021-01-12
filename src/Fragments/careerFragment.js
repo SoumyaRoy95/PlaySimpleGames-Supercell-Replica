@@ -17,7 +17,7 @@ export default function CenteredTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  console.log('inside game')
+  console.log('inside careee')
   return (
     <Paper className={classes.root}>
       <Tabs
@@ -25,13 +25,13 @@ export default function CenteredTabs() {
         onChange={handleChange}
         indicatorColor="primary"
         textColor="primary"
-        centered
+        centered        
       >
-        <Tab label="Hay Day" onClick={() => window.open('https://supercell.com/en/games/hayday/', '_blank')}/>
-        <Tab label="Clash of Clans" onClick={() => window.open('https://supercell.com/en/games/clashofclans/', '_blank')}/>
-        <Tab label="Boom Beach" onClick={() => window.open('https://supercell.com/en/games/boombeach/', '_blank')}/>
-        <Tab label="Clash Royale" onClick={() => window.open('https://supercell.com/en/games/clashroyale/', '_blank')}/>
-        <Tab label="Brawl Stars" onClick={() => window.open('https://supercell.com/en/games/brawlstars/', '_blank')}/>
+        <Tab label="Why you might Love it here" />
+        <Tab label="Our Offices" />
+        <Tab label="Joining Supercell" />
+        <Tab label="Living in Helsinki" />
+        
       </Tabs>
     </Paper>
   );

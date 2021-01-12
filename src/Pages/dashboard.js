@@ -11,6 +11,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Grid from '@material-ui/core/Grid';
 import GamesFragment from '../Fragments/gamesFragment'
+import CareerFragment from '../Fragments/careerFragment'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -71,6 +72,8 @@ const useStyles = makeStyles((theme) => ({
 export default function SearchAppBar() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [def, setDef] = React.useState("")
+  
 
   return (
     <div className={classes.root}>
@@ -83,15 +86,25 @@ export default function SearchAppBar() {
           <Grid item>
               <Grid container justify={"center"}>
                 <Tabs
-                  onChange={(e, v) => setValue(v)}
+                  onChange={(e, v) => {setValue(v); 
+                  if(v===0){
+                    setDef("games")
+                  }
+                  else if(v===1){
+                    setDef("career")
+                  }else{
+                    setDef("")
+                  }
+                  }}
                   value={value}
                   aria-label="Navigation Tabs"
                 >
-                  <Tab label={"Games"} />
-                  <Tab label={"Career"} />
+                  <Tab label={"Games"}   />
+                  <Tab label={"Career"}  />
                   <Tab label={"Support"} />
                   <Tab label={"Safe & Fair Play"} />
                 </Tabs>
+                
               </Grid>
             </Grid>
           </Typography>
@@ -112,7 +125,10 @@ export default function SearchAppBar() {
           
         </Toolbar>
         
+                  
       </AppBar>
+      {value===0&&def==="games"? <GamesFragment /> : ""}
+      {value===1&&def==="career"? <CareerFragment /> : ""}
     </div>
   );
 }

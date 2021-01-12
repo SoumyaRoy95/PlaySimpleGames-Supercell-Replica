@@ -8,6 +8,7 @@ const App = () => {
     <div className="page-container">
       <div className='content-wrap'>
         <Dashboard/>
+
       </div>
       
       <Footer />
